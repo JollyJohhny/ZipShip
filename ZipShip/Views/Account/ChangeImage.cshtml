@@ -1,0 +1,86 @@
+﻿@model ZipShip.Models.ImageViewModel
+
+@{
+    ViewBag.Title = "ChangeImage";
+}
+<head>
+    <style>
+        a:hover {
+            background-color: transparent;
+            color: white;
+            border-color: white;
+            font-weight: bolder;
+        }
+
+        .btn:hover {
+            color: white;
+        }
+
+        a {
+            color: white;
+            background-color: purple;
+        }
+
+        input:hover {
+            background-color: transparent;
+            color: white;
+            border-color: white;
+            font-weight: bolder;
+        }
+
+        input {
+            color: white;
+            background-color: purple;
+        }
+
+        body {
+            background-image: url('/Content/Images/signup.jpg');
+            position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .text {
+            color: white;
+        }
+
+        .h1, h2, h3 {
+            color: white;
+        }
+
+        img {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="text">
+    <h2>ChangeImage</h2>
+
+    @using (Html.BeginForm("ChangeImage", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>ImageViewModel</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Image, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+
+                    <input class="form-control" type="file" name="Image" id="Image" />
+                </div>
+            </div>
+            
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Change" class="btn" style="width:400px;height:40px" />
+                </div>
+            </div>
+        </div>
+    }
+
+
+</body>

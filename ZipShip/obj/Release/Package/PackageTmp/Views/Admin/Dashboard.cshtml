@@ -1,0 +1,120 @@
+﻿@model IEnumerable<ZipShip.Models.AdminDashboardViewModel>
+
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<head>
+    <style>
+        a:hover {
+            background-color: transparent;
+            color: white;
+            border-color: white;
+            font-weight: bolder;
+        }
+
+        .btn:hover {
+            color: white;
+        }
+
+        a {
+            color: white;
+            background-color: purple;
+        }
+
+        input:hover {
+            background-color: transparent;
+            color: white;
+            border-color: white;
+            font-weight: bolder;
+        }
+
+        input {
+            color: white;
+            background-color: purple;
+        }
+        body {
+            background-image: url('/Content/Images/signup.jpg');
+            position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .text {
+            color: white;
+        }
+        .h1, h2, h3 {
+            color: white;
+        }
+
+    </style>
+</head>
+<body class="text">
+
+
+    <h2>Dashboard</h2>
+    <div class="form-group" style="padding-left:800px">
+        <a href="#" class="btn" style="width:330px;height:40px"><b class="pt-3">Total Earning : @ViewBag.earning</b></a>
+    </div>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Shopper)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Traveller)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.ZipShipEarning)
+            </th>
+            <th style="display:none">
+                @Html.DisplayNameFor(model => model.OrderId)
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Shopper)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Traveller)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Order)
+                </td>
+                <td style="display:none">
+                    @Html.DisplayFor(modelItem => item.OrderId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ZipShipEarning)
+                </td>
+                <td style="background-color:transparent">
+                    <div class="form-group">
+                        <a href="~/Admin/Select/@item.OrderId" class="btn" style="width:330px;height:40px"><b class="pt-3">Deleivered</b></a>
+                    </div>
+                </td>
+            </tr>
+        }
+
+    </table>
+    <div style="padding-left:390px">
+        <div class="form-group">
+            <a href="~/Admin/Edit" class="btn" style="width:330px;height:40px"><b class="pt-3">Edit Info</b></a>
+        </div>
+        <div class="form-group">
+            <a href="/Admin/RegisteredUsers" class="btn" style="width:330px;height:40px"><b class="pt-3">Registered Users</b></a>
+        </div>
+        <div class="form-group">
+            <a href="~/Home/Index" class="btn" style="width:330px;height:40px"><b class="pt-3">Logout</b></a>
+        </div>
+
+    </div>
+</body>

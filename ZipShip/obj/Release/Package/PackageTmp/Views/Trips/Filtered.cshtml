@@ -1,0 +1,125 @@
+﻿@model IEnumerable<ZipShip.Models.TripViewModel>
+
+@{
+    ViewBag.Title = "Filtered";
+}
+
+<head>
+    <style>
+        a:hover {
+            background-color: transparent;
+            color: white;
+            border-color: white;
+            font-weight: bolder;
+        }
+
+        .btn:hover {
+            color: white;
+        }
+
+        a {
+            color: white;
+            background-color: purple;
+        }
+
+        input:hover {
+            background-color: transparent;
+            color: white;
+            border-color: white;
+            font-weight: bolder;
+        }
+
+        input {
+            color: white;
+            background-color: purple;
+        }
+
+        body {
+            background-image: url('/Content/Images/trips.jpg');
+            position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .text {
+            color: white;
+        }
+
+        .h1, h2, h3 {
+            color: white;
+        }
+    </style>
+
+</head>
+<body class="text">
+    <h2>Filtered Trips</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.AddedBy)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Country)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.City)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AddedBy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Country)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+
+
+
+                </tr>
+            }
+
+        </table>
+        <br />
+        <br />
+        <center>
+
+
+            <br />
+
+
+            <div>
+                @Html.DropDownList("filtertrip", (IEnumerable<SelectListItem>)ViewBag.list, "Choose Country", new { @class = "form-control" })
+            </div>
+            
+            <br />
+            <div class="form-group">
+                
+                    <input type="submit" value="Filter" class="btn" style="padding-right:40px;width:330px;height:40px" />
+                
+            </div>
+            
+
+            <div class="form-group">
+                <a href="~/Account/Index" class="btn" style="width:280px;height:40px"><b class="pt-3">My Account</b></a>
+            </div>
+        </center>
+                        }
+    </body>

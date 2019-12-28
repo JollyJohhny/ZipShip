@@ -1,0 +1,127 @@
+﻿
+
+@{
+    ViewBag.Title = "Cantact";
+    ViewBag.Message = "You can cantact our team";
+}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .text {
+            color: white;
+        }
+        body {
+            background-image: url('/Content/Images/contact.jpg');
+            position:center;
+            background-size:cover;
+            background-repeat:no-repeat;
+        }
+        html {
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        .column {
+            float: left;
+            width: 25%;
+            margin-bottom: 16px;
+            padding: 0 20px;
+        }
+
+        .card {
+            box-shadow: 0 12px 20px 0 rgb(128, 128, 128);
+        }
+        .h1,h2,h3,p
+        {
+            color:white;
+        }
+
+        .container {
+            padding: 0 16px;
+        }
+
+            .container::after, .row::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+
+        .title {
+            color: white;
+        }
+
+        .footer {
+            font-weight: bold;
+            font-size: 20px;
+            width: 50%;
+            height: 25%;
+            color: black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="text">
+    <center style="color:black">
+        
+        <h2>@ViewBag.Message</h2>
+    </center>
+    <br>
+
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <img src="~/Content/Images/Junaid.jpg" style="width:100%;height:400px">
+                <div class="container">
+                    <h2> Junaid Ali </h2>
+                    <p class="title">Reg# : 2016-CS-211</p>
+                    <p>Phone : 03216964902</p>
+                    <p>Mail : johhny424@gmail.com</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <img src="~/Content/Images/Rafy.jpg" style="width:100%;height:400px">
+                <div class="container">
+                    <h2> Abdul Rafay </h2>
+                    <p class="title">Reg# : 2016-CS-220</p>
+                    <p>Phone : 03076727266</p>
+                    <p>Mail : abdulrafe223@gmail.com</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <img src="~/Content/Images/Bilal.jpg" style="width:100%;height:400px">
+                <div class="container">
+                    <h2> Bilal Sheikh </h2>
+                    <p class="title">Reg# : 2016-CS-204</p>
+                    <p>Phone : 03244766631</p>
+                    <p>Mail : bilalzahid821@gmail.com</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <img src="~/Content/Images/Adnan.jpg" style="width:100%;height:400px">
+                <div class="container">
+                    <h2> Adnan Ashiq </h2>
+                    <p class="title">Reg# : 2016-CS-212</p>
+                    <p>Phone : 03022149193</p>
+                    <p>Mail : adnanaashiq457@gmail.com</p>
+
+                </div>
+            </div>
+        </div>
+    </div><center>
+    <div class="footer">
+        <p>"Our main goal is to develop a feeling of trust between peopleall over the World! To create a Global Village where everyone can make their wishes come true!</p>
+    </div>
+</center>
+</body>

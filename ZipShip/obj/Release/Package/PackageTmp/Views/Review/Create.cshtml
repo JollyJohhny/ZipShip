@@ -1,0 +1,65 @@
+﻿@model ZipShip.Models.ReviewViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<head>
+    <style>
+
+        body {
+            background-image: url('/Content/Images/review.jpg');
+            position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .text {
+            color: white;
+        }
+        .h1, h2, h3 {
+            color: white;
+        }
+
+    </style>
+</head>
+<body class="text">
+    <h2>Create</h2>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>ReviewViewModel</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Review, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Review, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Review, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Add" class="btn btn-default" style="background-color:purple;color:white;width:400px;height:40px" />
+                </div>
+            </div>
+            <div class="form-group" style="padding-left:210px">
+                <a href="~/Account/Index" class="btn btn-default" style="background-color:purple;color:white;width:280px;height:40px"><b class="pt-3">My Account</b></a>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

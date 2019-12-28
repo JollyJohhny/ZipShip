@@ -1,0 +1,90 @@
+﻿@model ZipShip.Models.ReviewViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<head>
+    <style>
+        a:hover {
+            background-color: transparent;
+            color: white;
+            border-color: white;
+            font-weight: bolder;
+        }
+
+        .btn:hover {
+            color: white;
+        }
+
+        a {
+            color: white;
+            background-color: purple;
+        }
+
+        input:hover {
+            background-color: transparent;
+            color: white;
+            border-color: white;
+            font-weight: bolder;
+        }
+
+        input {
+            color: white;
+            background-color: purple;
+        }
+        body {
+            background-image: url('/Content/Images/review.jpg');
+            position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .text {
+            color: white;
+        }
+
+        .h1, h2, h3 {
+            color: white;
+        }
+    </style>
+</head>
+<body class="text">
+    <h2>Create</h2>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Review, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10" >
+                    <textarea name="Review" id="Review" asp-for="Description" rows="5" cols="42" style="color:black"></textarea>
+                    @Html.ValidationMessageFor(model => model.Review, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Add" class="btn" style="width:400px;height:40px" />
+                </div>
+            </div>
+            <div class="form-group" style="padding-left:210px">
+                <a href="~/Account/Index" class="btn" style="width:280px;height:40px"><b class="pt-3">My Account</b></a>
+            </div>
+        </div>
+    }
+
+    
+</body>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

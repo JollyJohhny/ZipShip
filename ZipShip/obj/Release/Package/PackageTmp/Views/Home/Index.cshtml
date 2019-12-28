@@ -1,0 +1,197 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <style>
+
+        html {
+            box-sizing: border-box;
+        }
+
+        a:hover {
+            background-color: transparent;
+            color: purple;
+            border-color: purple;
+        }
+
+        .btn:hover {
+            color: purple;
+        }
+
+        a {
+            color: white;
+            background-color: purple;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        .column {
+            float: left;
+            width: 25%;
+            margin-bottom: 16px;
+            padding: 0 20px;
+        }
+
+        .card {
+            box-shadow: 0 12px 20px 0 rgb(128, 128, 128);
+        }
+
+        .container {
+            padding: 0 16px;
+        }
+
+            .container::after, .row::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+
+        .title {
+            color: black;
+        }
+
+        .footer {
+            font-weight: bold;
+            font-size: 20px;
+            width: 50%;
+            height: 25%;
+            color: black;
+            text-align: center;
+        }
+
+        .body {
+        }
+    </style>
+</head>
+<body class="text">
+
+    <div>
+        <img src="~/Content/Images/logo_color.png" style="height:120px;width:160px;padding-left:50px" />
+        <h2 style="color:purple">Explore The World!</h2>
+        <h2>Shop Products From Abroad, Delivered to you by Travelers.</h2>
+    </div>
+
+
+    <div class="form-group">
+        <a href="~/Admin/Login" class="btn" style="width:400px;height:40px"><b>Admin Login</b></a>
+    </div>
+
+
+    <center><h3>Recent Completed Orders</h3></center>
+    <br>
+
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <img src="@ViewBag.ordersp1" style="width:100%;height:300px">
+                <div class="container">
+                    <h2> @ViewBag.ordersn1 </h2>
+                    <p class="title">@ViewBag.country1</p>
+                    <p>Traveller : @ViewBag.ordersT1</p>
+                    <p>Buyer : @ViewBag.ordersS1</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <img src="@ViewBag.ordersp2" style="width:100%;height:300px">
+                <div class="container">
+                    <h2> @ViewBag.ordersn2 </h2>
+                    <p class="title">@ViewBag.country2</p>
+                    <p>Traveller : @ViewBag.ordersT2</p>
+                    <p>Buyer : @ViewBag.ordersS2</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <img src="@ViewBag.ordersp3" style="width:100%;height:300px">
+                <div class="container">
+                    <h2> @ViewBag.ordersn3 </h2>
+                    <p class="title">@ViewBag.country3</p>
+                    <p>Traveller : @ViewBag.ordersT3</p>
+                    <p>Buyer : @ViewBag.ordersS3</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <img src="@ViewBag.ordersp4" style="width:100%;height:300px">
+                <div class="container">
+                    <h2> @ViewBag.ordersn4 </h2>
+                    <p class="title">@ViewBag.country4</p>
+                    <p>Traveller : @ViewBag.ordersT4 </p>
+                    <p>Buyer : @ViewBag.ordersS4</p>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br />
+    
+    <center><h3>Reviews &amp; Feedbacks</h3></center>
+    <br>
+
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <img src="@ViewBag.p1" style="width:100%;height:300px">
+                <div class="container" style="height:150px">
+                    <h2> @ViewBag.n1 </h2>
+
+                    <p style="width:20%"> @ViewBag.r1</p>
+
+                    <br /><br />
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <img src="@ViewBag.p2" style="width:100%;height:300px">
+                <div class="container" style="height:150px">
+                    <h2> @ViewBag.n2 </h2>
+
+                    <p style="width:20%"> @ViewBag.r2</p>
+                    <br />
+
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <img src="@ViewBag.p3" style="width:100%;height:300px">
+                <div class="container" style="height:150px">
+                    <h2> @ViewBag.n3 </h2>
+                    <p style="width:20%"> @ViewBag.r3</p>
+                    <br /><br />
+
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <img src="@ViewBag.p4" style="width:100%;height:300px">
+                <div class="container" style="height:150px">
+                    <h2> @ViewBag.n4 </h2>
+
+                    <p style="width:20%"> @ViewBag.r4</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <footer style="color:purple;font-weight:bolder">
+        <p>&copy; Project By - 2016-CS-204,2016-CS-211,2016-CS-212,2016-CS-220 </p>
+        <p> Submitted to - Sir Samyan Qayyum Wahla </p>
+    </footer>
+</body>

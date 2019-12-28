@@ -1,0 +1,114 @@
+﻿@model IEnumerable<ZipShip.Models.TripListViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<head>
+    <style>
+        a:hover {
+            background-color: transparent;
+            color: white;
+            border-color: white;
+            font-weight: bolder;
+        }
+
+        .btn:hover {
+            color: white;
+        }
+
+        a {
+            color: white;
+            background-color: purple;
+        }
+
+        input:hover {
+            background-color: transparent;
+            color: white;
+            border-color: white;
+            font-weight: bolder;
+        }
+
+        input {
+            color: white;
+            background-color: purple;
+        }
+
+        body {
+            background-image: url('/Content/Images/trips.jpg');
+            position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .text {
+            color: white;
+        }
+
+        .h1, h2, h3 {
+            color: white;
+        }
+    </style>
+</head>
+<body class="text">
+
+
+    <h2>My Trips</h2>
+
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+
+            <td>
+                <a href="/Trips/Edit/@item.Id" class="btn" style="width:180px;height:40px">Edit</a>
+            </td>
+            <td>
+                <a href="/Trips/Delete/@item.Id" class="btn" style="width:180px;height:40px">Delete</a>
+            </td>
+
+            <td></td>
+        </tr>
+        }
+
+    </table>
+    <div style="padding-left:390px">
+        
+        <div class="form-group">
+            <a href="~/Account/Index" class="btn" style="width:330px;height:40px"><b class="pt-3">My Account</b></a>
+        </div>
+    </div>
+
+
+</body>
+

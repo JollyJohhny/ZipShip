@@ -1,0 +1,85 @@
+﻿@model ZipShip.Models.RegisterViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<head>
+    <style>
+        a:hover {
+            background-color: transparent;
+            color: white;
+            border-color: white;
+            font-weight: bolder;
+        }
+        .btn:hover{
+            color:white;
+        }
+        a {
+            color: white;
+            background-color: purple;
+        }
+
+        input:hover {
+            background-color: transparent;
+            color: white;
+            border-color: white;
+            font-weight: bolder;
+        }
+
+        input {
+            color: white;
+            background-color: purple;
+        }
+        body {
+            background-image: url('/Content/Images/account.jpg');
+            position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .text {
+            color: white;
+        }
+        .h1, h2, h3 {
+            color: white;
+        }
+        img {
+            border-radius: 50%;
+            
+        }
+        
+    </style>
+</head>
+<body class="text">
+    <center>
+        <div >
+            <div>
+                <img src="~/Content/Images/logo_color.png" style="height:120px;width:160px;padding-left:50px" />
+            </div>
+            <h2 style="color:purple">Explore The World!</h2>
+            <div>
+                <div ><img src="@ViewBag.image" style="height:100px;width:130px" /></div>
+                <p ><b>@ViewBag.name</b></p>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <a href="~/Trips/Index" class="btn" style="width:400px;height:40px"><b class="pt-3">Trips</b></a>
+        </div>
+        <div class="form-group" ">
+            <a href="/Order/Index" class="btn" style="width:400px;height:40px"><b class="pt-3">Orders</b></a>
+        </div>
+        <div class="form-group">
+            <a href="~/Account/Review" class="btn" style="width:400px;height:40px"><b class="pt-3">Give Reviews</b></a>
+        </div>
+        <div class="form-group">
+            <a href="~/Account/Edit" class="btn" style="width:400px;height:40px"><b class="pt-3">Edit/Delete Account</b></a>
+        </div>
+        <div>
+            <form>
+                <a href="javascript:document.getElementById('logoutForm').submit()" class="btn" style="width:400px;height:38px"><b>Log off</b></a>
+            </form>
+        </div>
+    </center>
+</body>
